@@ -1,7 +1,11 @@
 import './App.css'
 import {Route, Routes} from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage.jsx";
+import MoviePage from "./pages/Movies/MoviePage.jsx";
 import AppLayout from "./layout/AppLayout.jsx";
 import MovieDetailPage from "./pages/MovieDetail/MovieDetailPage.jsx";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
+
 
 // 홈페이지
 // 영화 전체 보여주는 페이지
@@ -23,6 +27,7 @@ function App() {
           {/*<Route path="/movies" element={<MoviePage/>}/>*/}
           {/*<Route path="/movies/:id" element={<MovieDetailPage/>}/>*/}
         </Route>
+        <Route path="*" element={<NotFoundPage/>}/>
       </Routes>
     </>
   )
