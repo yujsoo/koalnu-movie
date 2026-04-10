@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -71,7 +71,9 @@ const NavBar = () => {
 
   return (
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar position="static" sx={{
+          backgroundColor: "#141414",
+        }}>
           <Toolbar>
             <IconButton
                 size="large"
@@ -87,9 +89,9 @@ const NavBar = () => {
                 variant="h6"
                 noWrap
                 component="div"
-                sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }}}
             >
-              MOVIE
+              <Link to='/'>MOVIE</Link>
             </Typography>
             <Menu
                 id="menu-appbar"
