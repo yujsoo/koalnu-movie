@@ -1,6 +1,5 @@
 import {useTopReated} from "../../hooks/useTopReated.js";
-import {Swiper, SwiperSlide} from "swiper/react";
-import MovieCard from "../MovieCard/MovieCard.jsx";
+import MovieSlider from "../../common/MovieSlider/MovieSlider.jsx";
 
 const TopReated = () => {
   const {data, isLoading, isError, error} = useTopReated();
@@ -15,21 +14,7 @@ const TopReated = () => {
 
   return (
       <div className={'content-container'}>
-        <h3 className={'section-title'}>Top reated</h3>
-        <Swiper
-            spaceBetween={30}
-            slidesPerView={'auto'}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
-        >
-          {
-            data?.results.map((movie,index) => (
-                <SwiperSlide key={index} className={'movie-slide'}>
-                  <MovieCard item={movie}/>
-                </SwiperSlide>
-            ))
-          }
-        </Swiper>
+        <MovieSlider title={'Top reated'} data={data}/>
       </div>
   )
 }

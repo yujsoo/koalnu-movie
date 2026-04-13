@@ -1,7 +1,5 @@
 import {usePopularMoviesQuery} from "../../hooks/usePopularMovies.js";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import MovieCard from "../MovieCard/MovieCard.jsx";
+import MovieSlider from "../../common/MovieSlider/MovieSlider.jsx";
 
 const PopularMovieSlide = () => {
   const {data, isLoading, isError, error} = usePopularMoviesQuery();
@@ -16,21 +14,7 @@ const PopularMovieSlide = () => {
 
    return (
        <div className={'content-container'}>
-         <h3 className={'section-title'}>Popular Movie</h3>
-         <Swiper
-             spaceBetween={30}
-             slidesPerView={'auto'}
-             onSlideChange={() => console.log('slide change')}
-             onSwiper={(swiper) => console.log(swiper)}
-         >
-           {
-             data?.results.map((movie,index) => (
-                 <SwiperSlide key={index} className={'movie-slide'}>
-                   <MovieCard item={movie}/>
-                 </SwiperSlide>
-             ))
-           }
-         </Swiper>
+        <MovieSlider title={'Popular Movie'} data={data}/>
        </div>
    )
 }

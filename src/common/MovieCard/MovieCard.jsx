@@ -19,7 +19,7 @@ const MovieCard = ({item}) => {
           <p className={'title'}>{item.title}</p>
           <div className={'tag-box'}>
             {item.genre_ids.map((id) => (
-                <span className={'tag'}>{id}</span>
+                <span className={'tag'} key={id}>{id}</span>
             ))}
           </div>
           <div className={'etc'}>
