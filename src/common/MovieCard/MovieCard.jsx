@@ -1,5 +1,19 @@
 import './MovieCard.style.css'
+import {useMovieGenreQuery} from "../../hooks/useMovieGenreQuery.js";
+
 const MovieCard = ({item}) => {
+
+  const { data: genreData } = useMovieGenreQuery();
+  console.log(genreData)
+
+  const showGenre = (genreId) => {
+    if(!genreData) return [];
+    const genreNameList = genreId.map((id) => {
+      const genreObj = genreData.find((genre) => genre.id === id);
+      return genreObj.name;
+    })
+    return genreNameList;
+  }
 
   if (!item) {
     return null;
@@ -18,7 +32,7 @@ const MovieCard = ({item}) => {
         <div className={'info-box'}>
           <p className={'title'}>{item.title}</p>
           <div className={'tag-box'}>
-            {item.genre_ids.map((id) => (
+            {showGenre(item.genre_ids).map((id) => (
                 <span className={'tag'} key={id}>{id}</span>
             ))}
           </div>
