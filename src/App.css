@@ -12,3 +12,43 @@ body {
   color: #fff;
   font-size: 24px;
 }
+
+/* 페이지네이션 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+  color: #fff;
+  align-items: center;
+}
+
+.page-item {
+  color: #fff;
+}
+
+.page-link {
+  display: block;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.page-link:hover {
+  color:#141414;
+  background-color: #f5f5f5;
+}
+
+.active .page-link {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
+.disabled .page-link {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
