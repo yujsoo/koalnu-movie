@@ -1,14 +1,13 @@
 .movies-search-list {
   display:grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 16px;
   padding: 0;
-  max-width:1000px;
 }
 
 .movies-search-list li {
   width:100%;
-  min-height:492px;
+  aspect-ratio: 2 / 3;
 }
 
 .guide {
@@ -16,4 +15,16 @@
   color: #fff;
   padding-top:100px;
   text-align: center;
+}
+
+@media all and (max-width: 1200px) {
+  .movies-search-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media all and (max-width: 768px) {
+  .movies-search-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
