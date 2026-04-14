@@ -23,6 +23,7 @@
   height: 100%;
   border-radius: 8px;
   color:#fff;
+  overflow: hidden;
 }
 
 .movie-card:hover .info-box {

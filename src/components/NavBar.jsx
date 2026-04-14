@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -58,6 +58,7 @@ const pages = [{ name: 'home', link : '/'}, { name: 'movies', link : '/movies'}]
 
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [keyword, setKeyword] = useState('')
   const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
@@ -68,6 +69,12 @@ const NavBar = () => {
     navigate(`/${pageLink}`);
     setAnchorElNav(null);
   };
+
+  const handleSearch = (e) => {
+    e.preventDefault()
+    navigate(`/movies?keyword=${keyword}`)
+    setKeyword('')
+  }
 
   return (
       <Box sx={{ flexGrow: 1 }}>
@@ -114,15 +121,19 @@ const NavBar = () => {
                   </MenuItem>
               ))}
             </Menu>
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                  placeholder="Search…"
-                  inputProps={{ 'aria-label': 'search' }}
-              />
-            </Search>
+            <form action="" onSubmit={handleSearch}>
+              <Search>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                    placeholder="Search…"
+                    inputProps={{ 'aria-label': 'search' }}
+                    value={keyword}
+                    onChange={(e) => setKeyword(e.target.value)}
+                />
+              </Search>
+            </form>
           </Toolbar>
         </AppBar>
       </Box>

@@ -1,0 +1,19 @@
+.movies-search-list {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 0;
+  max-width:1000px;
+}
+
+.movies-search-list li {
+  width:100%;
+  min-height:492px;
+}
+
+.guide {
+  width: 100%;
+  color: #fff;
+  padding-top:100px;
+  text-align: center;
+}
