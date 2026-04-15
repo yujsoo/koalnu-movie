@@ -1,5 +1,6 @@
 import './MovieCard.style.css'
 import {useMovieGenreQuery} from "../../hooks/useMovieGenreQuery.js";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({item}) => {
 
@@ -27,19 +28,21 @@ const MovieCard = ({item}) => {
               + ")",
         }
       }>
-        <div className={'info-box'}>
-          <p className={'title'}>{item.title}</p>
-          <div className={'tag-box'}>
-            {showGenre(item.genre_ids).map((id) => (
-                <span className={'tag'} key={id}>{id}</span>
-            ))}
+        <Link to={`/movies/${item.id}`}>
+          <div className={'info-box'}>
+            <p className={'title'}>{item.title}</p>
+            <div className={'tag-box'}>
+              {showGenre(item.genre_ids).map((id) => (
+                  <span className={'tag'} key={id}>{id}</span>
+              ))}
+            </div>
+            <div className={'etc'}>
+              <p>{item.vote_average}</p>
+              <p>{item.popularity}</p>
+              <p>{item.adult ? 'over18' : 'under18'}</p>
+            </div>
           </div>
-          <div className={'etc'}>
-            <p>{item.vote_average}</p>
-            <p>{item.popularity}</p>
-            <p>{item.adult ? 'over18' : 'under18'}</p>
-          </div>
-        </div>
+        </Link>
       </div>
   )
 }

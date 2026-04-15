@@ -1,16 +1,30 @@
+:root {
+  --background-bg: #141414;
+  --point-color: #E50000;
+  --point-hover-color:#CD0000;
+  --gray-color:#999999;
+}
+
+html {
+  font-size: 10px;
+}
+
 body {
+  font-size: 1.6rem;
   background-color:var(--background-bg);
 }
 
 .content-container {
-  padding: 0 20px;
-  padding-bottom: 80px;
+  padding: 0 2rem;
+  padding-bottom: 10rem;
   overflow:hidden;
 }
 
 .section-title {
+  margin-bottom: 3rem;
   color: #fff;
-  font-size: 24px;
+  font-weight: 700;
+  font-size: 3.8rem;
 }
 
 /* 페이지네이션 */

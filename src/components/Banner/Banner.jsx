@@ -1,5 +1,6 @@
 import {usePopularMoviesQuery} from "../../hooks/usePopularMovies.js";
 import "./Banner.style.css";
+
 const Banner = () => {
   const {data, isLoading, isError, error } = usePopularMoviesQuery();
   console.log(data);
@@ -13,13 +14,17 @@ const Banner = () => {
   }
   return (
       <div style={{
-     backgroundImage: "url(" + `https://media.themoviedb.org/t/p/w1066_and_h600_face${data?.results[0].poster_path}` + ")",
+     backgroundImage: "url(" + `https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces${data?.results[0].poster_path}` + ")",
       }}
       className={'banner'}
       >
         <div className={'info'}>
           <strong>{data?.results[0].title}</strong>
           <p>{data?.results[0].overview}</p>
+          <div className={'ctrl-btn'}>
+            <button type={'button'} className={'btn play-now'}>Play Now</button>
+            <button type={'button'} className={'btn'}>Details</button>
+          </div>
         </div>
       </div>
   )
