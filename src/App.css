@@ -66,3 +66,16 @@ body {
   opacity: 0.3;
   cursor: not-allowed;
 }
+
+.wrap {
+  max-width:120rem;
+  margin: 0 auto;
+  padding:8rem 2rem;
+}
+
+
+@media all and (max-width: 1200px) {
+  .wrap {
+    padding:3rem 2rem;
+  }
+}

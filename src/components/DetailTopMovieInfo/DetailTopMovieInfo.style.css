@@ -1,0 +1,81 @@
+.box {
+  padding: 5rem;
+  background: #1A1A1A;
+  border-radius:1.2rem;
+  border:1px solid #262626;
+}
+
+.topMovie-info {
+  display: flex;
+  padding: 5rem;
+  background: #1A1A1A;
+  border-radius:1.2rem;
+  border:1px solid #262626;
+  gap: 4rem;
+}
+.topMovie-info .movie-card {
+  width:300px;
+  height:450px;
+}
+
+.detail {
+  padding-top: 2rem;
+  color:#fff;
+}
+
+dl {
+  margin-top:2rem;
+}
+
+dl dt {
+  float:left;
+}
+
+dl dd:after {
+  content:'';
+  display:block;
+  clear:both;
+}
+
+dl dd {
+  padding-left:8rem;
+  padding-bottom:1.2rem;
+}
+
+.detail h3 {
+  font-size:2.8rem;
+}
+
+.overview {
+  margin-top: 2rem;
+  color:#fff;
+  line-height:1.5;
+}
+
+.overview .tagline {
+  margin-bottom:1rem;
+}
+
+h4 {
+  color:var(--gray-color);
+  font-size: 1.8rem;
+  margin-bottom:1.4rem;
+}
+
+.company {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+
+@media all and (max-width: 1200px) {
+  .topMovie-info {
+    display: block;
+    padding:4rem;
+  }
+
+  .detail {
+    padding-top: 3rem;
+  }
+}
