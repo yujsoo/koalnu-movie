@@ -18,7 +18,11 @@ const MovieDetailPage = () => {
   console.log(data)
 
   return (
-      <DetailTopMovieInfo data={data}/>
+      <>
+        <DetailTopMovieInfo data={data}/>
+        {/* Reviews */}
+
+      </>
   )
 }
 
