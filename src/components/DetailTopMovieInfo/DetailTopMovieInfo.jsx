@@ -8,7 +8,7 @@ const DetailTopMovieInfo = ({data}) => {
   };
 
   return (
-      <div className={'wrap'}>
+      <>
         <div className={'topMovie-info'}>
           <div className={'movie-card'} style={
             {
@@ -56,7 +56,7 @@ const DetailTopMovieInfo = ({data}) => {
           <p className={'tagline'}>"{data.tagline}"</p>
           <p>{data.overview}</p>
         </div>
-      </div>
+      </>
   )
 }
 

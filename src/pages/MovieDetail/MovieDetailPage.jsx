@@ -2,6 +2,7 @@ import {useMoviesDetailQuery} from "../../hooks/useMovieDetail.js";
 import { useParams} from "react-router-dom";
 import DetailTopMovieInfo
   from "../../components/DetailTopMovieInfo/DetailTopMovieInfo.jsx";
+import DetailReview from "../../components/DetailReview/DetailReview.jsx";
 
 const MovieDetailPage = () => {
   const { id } = useParams();
@@ -18,11 +19,11 @@ const MovieDetailPage = () => {
   console.log(data)
 
   return (
-      <>
+      <div className={'wrap'}>
         <DetailTopMovieInfo data={data}/>
         {/* Reviews */}
-
-      </>
+        <DetailReview/>
+      </div>
   )
 }
 
