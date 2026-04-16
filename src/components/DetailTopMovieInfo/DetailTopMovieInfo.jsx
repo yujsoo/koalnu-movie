@@ -53,7 +53,8 @@ const DetailTopMovieInfo = ({data}) => {
         </div>
         <div className={'box overview'}>
           <h4>Description</h4>
-          <p className={'tagline'}>"{data.tagline}"</p>
+          {/* 태그라인 없다면 렌더링 X */}
+          {data.tagline && <p className={'tagline'}>{`"${data.tagline}"`}</p>}
           <p>{data.overview}</p>
         </div>
       </>

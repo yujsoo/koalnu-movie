@@ -1,0 +1,29 @@
+.no-review {
+  color:#fff;
+}
+
+.reviewer {
+  position:relative;
+  width: 3rem;
+  height: 3rem;
+  border-radius:100%;
+  overflow: hidden;
+}
+
+.review-user-img {
+  position: absolute;
+  top:0;
+  left:0;
+  text-align: center;
+}
+
+.default-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius:100%;
+  overflow: hidden;
+  background:#fff;
+}

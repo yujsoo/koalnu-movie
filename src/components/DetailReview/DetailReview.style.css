@@ -1,0 +1,39 @@
+.reviewers {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  align-items: center;
+  gap: 1rem;
+  color:#fff;
+  font-size:1.4rem;
+}
+
+.author {
+  margin-top:1rem;
+  text-decoration: underline;
+}
+
+.reviews .content {
+  display: -webkit-box;
+  margin-top:1rem;
+  color:#fff;
+line-height: 1.4;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.date {
+  display: block;
+  color:#fff;
+  font-size:1.2rem;
+  margin-top: 1rem;
+}
+
+.review_list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
