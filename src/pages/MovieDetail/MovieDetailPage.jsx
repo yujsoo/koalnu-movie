@@ -4,6 +4,7 @@ import DetailTopMovieInfo
   from "../../components/DetailTopMovieInfo/DetailTopMovieInfo.jsx";
 import DetailReview from "../../components/DetailReview/DetailReview.jsx";
 import './MovieDetail.style.css'
+import Trailer from "../../components/Trailer/Trailer.jsx";
 
 const MovieDetailPage = () => {
   const { id } = useParams();
@@ -24,6 +25,8 @@ const MovieDetailPage = () => {
         <DetailTopMovieInfo data={data}/>
         {/* Reviews */}
         <DetailReview/>
+        {/*  예고편*/}
+        <Trailer movieId={id} />
       </div>
   )
 }

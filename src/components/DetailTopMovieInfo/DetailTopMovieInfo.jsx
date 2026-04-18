@@ -10,15 +10,12 @@ const DetailTopMovieInfo = ({data}) => {
   return (
       <>
         <div className={'topMovie-info'}>
-          <div className={'movie-card'} style={
-            {
-              backgroundPosition: 'center top',
-              backgroundSize:'cover',
-              backgroundImage: "url("
-                  + `https://media.themoviedb.org/t/p/w300_and_h450_face/${data?.poster_path}`
-                  + ")",
-            }
-          }/>
+          <div className="img-box">
+            <img
+                src={`https://media.themoviedb.org/t/p/w220_and_h330_face/${data?.poster_path}`}
+                alt={data.title}
+            />
+          </div>
           <div className={'detail'}>
             <h3>{data.title}</h3>
             <dl>
