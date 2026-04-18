@@ -6,14 +6,15 @@ const MovieCard = ({item}) => {
 
   const { data: genreData } = useMovieGenreQuery();
   console.log(genreData)
-  const showGenre = (genreId) => {
-    const genreNameList = genreId.map((id) => {
-      const filter = genreData?.find((genre) => genre.id === id);
-      return filter?.name;
-    });
-    return genreNameList
 
-  }
+  const showGenre = (genreIds) => {
+    if (!Array.isArray(genreIds) || !genreData) return [];
+
+    return genreIds
+    .map(id => genreData.find(g => g.id === id)?.name)
+    .filter(Boolean);
+  };
+
   if (!item) {
     return null;
   }
@@ -32,8 +33,10 @@ const MovieCard = ({item}) => {
           <div className={'info-box'}>
             <p className={'title'}>{item.title}</p>
             <div className={'tag-box'}>
-              {showGenre(item.genre_ids).map((id) => (
-                  <span className={'tag'} key={id}>{id}</span>
+              {showGenre(item.genre_ids).map((name) => (
+                  <span className={'tag'} key={`${item.id}-${name}`}>
+                    {name}
+                  </span>
               ))}
             </div>
             <div className={'etc'}>
