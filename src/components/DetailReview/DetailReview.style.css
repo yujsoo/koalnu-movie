@@ -1,6 +1,10 @@
 .list-item {
   margin-bottom:40px;
 }
+
+.list-item:last-child {
+  margin-bottom: 0;
+}
 .reviewers {
   display: flex;
   align-items: center;
