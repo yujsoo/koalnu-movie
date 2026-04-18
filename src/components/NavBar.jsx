@@ -65,8 +65,12 @@ const NavBar = () => {
     setAnchorElNav(event.currentTarget);
   };
 
+  const handleCloseMenu = () => {
+    setAnchorElNav(null);
+  };
+
   const handleCloseNavMenu = (pageLink) => {
-    navigate(`/${pageLink}`);
+    navigate(pageLink);
     setAnchorElNav(null);
   };
 
@@ -82,25 +86,16 @@ const NavBar = () => {
           backgroundColor: "#141414",
         }}>
           <Toolbar>
-            <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
             <Typography
                 variant="h6"
                 noWrap
                 component="div"
                 sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }}}
             >
-              <Link to='/'>MOVIE</Link>
+              <Link to='/' className={'logo'}><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/3840px-Netflix_2015_logo.svg.png" alt=""/></Link>
             </Typography>
             <Menu
+                onClose={handleCloseMenu}
                 id="menu-appbar"
                 anchorEl={anchorElNav}
                 anchorOrigin={{
@@ -134,6 +129,17 @@ const NavBar = () => {
                 />
               </Search>
             </form>
+            <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="inherit"
+                className={'menu-button'}
+            >
+              <MenuIcon />
+            </IconButton>
           </Toolbar>
         </AppBar>
       </Box>

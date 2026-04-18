@@ -73,6 +73,16 @@ body {
   padding:8rem 2rem;
 }
 
+.logo {
+  display: block;
+  width:100px;
+  margin-left:10px;
+}
+
+.logo img {
+  width:100%;
+}
+
 
 @media all and (max-width: 1200px) {
   .wrap {
@@ -90,6 +100,7 @@ body {
     padding-bottom:4rem;
   }
 }
+
 
 @media all and (max-width: 768px) {
   .section-title {
