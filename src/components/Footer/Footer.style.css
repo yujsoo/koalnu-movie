@@ -1,0 +1,28 @@
+.footer {
+  margin-top: 6rem;
+  padding: 3rem 2rem;
+  background: #111;
+  color: #aaa;
+  border-top: 1px solid #222;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 1.4rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links li {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer-links li:hover {
+  color: #fff;
+}
