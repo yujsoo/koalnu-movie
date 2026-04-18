@@ -1,7 +1,9 @@
 import {usePopularMoviesQuery} from "../../hooks/usePopularMovies.js";
 import "./Banner.style.css";
+import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
+  const navigate = useNavigate();
   const {data, isLoading, isError, error } = usePopularMoviesQuery();
   console.log(data);
 
@@ -23,7 +25,7 @@ const Banner = () => {
           <p>{data?.results[0].overview}</p>
           <div className={'ctrl-btn'}>
             <button type={'button'} className={'btn play-now'}>Play Now</button>
-            <button type={'button'} className={'btn'}>Details</button>
+            <button type={'button'} className={'btn'} onClick={() => navigate(`/movies/${data?.results[0].id}`)}>Details</button>
           </div>
         </div>
       </div>
